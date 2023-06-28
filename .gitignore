@@ -1,0 +1,18 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignorar archivos y directorios específicos
+dist/
+build/
+
+# Ignorar archivos de configuración local
+.env
+
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos de respaldo y temporales
+*.bak
+*.swp
+*~
