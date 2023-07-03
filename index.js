@@ -33,6 +33,9 @@ const corOptions = {
     console.log("origin", origin);
     // revisa si la peticion viene una lista blanca
     const existe = urlPermitidas.some((dominio) => dominio === origin);
+    console.log("existe", existe);
+    console.log("urlPermitidas", urlPermitidas);
+
     if (existe) {
       callback(null, true);
     } else {
