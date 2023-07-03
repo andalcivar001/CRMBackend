@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const urlPermitidas = [process.env.FRONTEND_URL];
 
+/// MODIFICAR ESTO PARA HACER CAMBIOS -- OJO !!!!!
 const corsOptions = {
   oorigin: process.env.FRONTEND_UR,
 };
