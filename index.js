@@ -24,18 +24,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // definir dominio que acepte peiticiones
+
 const urlPermitidas = [process.env.FRONTEND_URL];
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    //   origin = "https://crm-react-001.netlify.app";
-
-    if (!origin || urlPermitidas.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  oorigin: process.env.FRONTEND_UR,
 };
 
 app.use(cors(corsOptions));
