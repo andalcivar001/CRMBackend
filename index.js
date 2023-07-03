@@ -28,7 +28,7 @@ if (process.env.FRONTEND_URL !== "http://localhost:3000") {
   console.log("son diferentes");
 }
 const urlPermitidas = [process.env.FRONTEND_URL];
-/*
+/* 
 const corsOptions = {
   origin: function (origin, callback) {
     origin = "https://crm-react-001.netlify.app";
