@@ -49,7 +49,7 @@ app.use(express.static("uploads"));
 const port = process.env.PORT || 5000;
 const host = process.env.HOST || "0.0.0.0";
 // Puerto
-app.listen(port, host, () => {
+app.listen(port, () => {
   console.log("el servidor esta funcionando");
 });
 
