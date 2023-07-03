@@ -22,7 +22,6 @@ module.exports = function () {
   // PRODUCTOS
   router.post(
     "/productos",
-    auth,
     productoController.subirArchivo,
     productoController.crearProducto
   );
@@ -34,7 +33,6 @@ module.exports = function () {
   );
   router.put(
     "/productos/:idProducto",
-    auth,
     productoController.subirArchivo,
     productoController.actualizarProducto
   );

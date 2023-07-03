@@ -38,6 +38,7 @@ exports.autenticarUsuario = async (req, res, next) => {
           expiresIn: "4h",
         }
       );
+      console.log(token);
       res.json({ token });
     }
   }

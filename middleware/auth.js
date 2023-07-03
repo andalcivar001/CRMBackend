@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 module.exports = (req, res, next) => {
   //autorizacion por headers
+
   const authHeader = req.get("Authorization");
   if (!authHeader) {
     const error = new Error("No autenticado, no hay JWT");
