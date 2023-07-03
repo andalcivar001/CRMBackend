@@ -32,14 +32,14 @@ const corsOptions = {
   origin: function (origin, callback) {
     console.log("origin", origin);
     // revisa si la peticion viene una lista blanca
-    const existe = urlPermitidas.some((dominio) => dominio === origin);
+    // const existe = urlPermitidas.some((dominio) => dominio === origin);
     console.log("existe", existe);
     console.log("urlPermitidas", urlPermitidas);
 
-    if (existe) {
+    if (!origin || urlPermitidas.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      callback(new Error("No permitido por CORS"));
+      callback(new Error("Not allowed by CORS"));
     }
   },
 };
