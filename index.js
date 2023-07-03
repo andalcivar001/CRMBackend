@@ -52,3 +52,5 @@ const host = process.env.HOST || "0.0.0.0";
 app.listen(port, host, () => {
   console.log("el servidor esta funcionando");
 });
+
+console.log("ya paso el listen");
