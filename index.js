@@ -17,6 +17,8 @@ mongoose
 //crear servidor
 const app = express();
 
+app.use(express.static("uploads"));
+
 // Habilitar Body-Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,16 +46,12 @@ app.use(cors(corOptions));
 app.use("/", routes());
 
 //carpeta publica
-app.use(express.static("uploads"));
 
 const port = process.env.PORT || 5000;
 const host = process.env.HOST || "0.0.0.0";
 // Puerto
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log("el servidor esta funcionando");
 });
 
 console.log("ya paso el listen");
-console.log(process.env.PORT);
-
-console.log(process.env.HOST);

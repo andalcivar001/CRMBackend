@@ -16,3 +16,4 @@ build/
 *.bak
 *.swp
 *~
+.vercel
