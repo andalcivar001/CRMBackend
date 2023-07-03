@@ -28,8 +28,8 @@ if (process.env.FRONTEND_URL !== "http://localhost:3000") {
   console.log("son diferentes");
 }
 const urlPermitidas = [process.env.FRONTEND_URL];
-const corOptions = {
-  origin: (origin, callback) => {
+const corsOptions = {
+  origin: function (origin, callback) {
     console.log("origin", origin);
     // revisa si la peticion viene una lista blanca
     const existe = urlPermitidas.some((dominio) => dominio === origin);
@@ -44,7 +44,7 @@ const corOptions = {
   },
 };
 
-app.use(cors(corOptions));
+app.use(cors(corsOptions));
 
 // Rutas de la App
 app.use("/", routes());
