@@ -30,6 +30,7 @@ if (process.env.FRONTEND_URL !== "http://localhost:3000") {
 const urlPermitidas = [process.env.FRONTEND_URL];
 const corsOptions = {
   origin: function (origin, callback) {
+    origin = "https://crm-react-001.netlify.app";
     console.log("origin", origin);
     // revisa si la peticion viene una lista blanca
     // const existe = urlPermitidas.some((dominio) => dominio === origin);
