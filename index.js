@@ -45,7 +45,7 @@ const corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Rutas de la App
 app.use("/", routes());
