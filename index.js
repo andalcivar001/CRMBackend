@@ -24,19 +24,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // definir dominio que acepte peiticiones
-if (process.env.FRONTEND_URL !== "http://localhost:3000") {
-  console.log("son diferentes");
-}
 const urlPermitidas = [process.env.FRONTEND_URL];
-/* 
+
 const corsOptions = {
   origin: function (origin, callback) {
-    origin = "https://crm-react-001.netlify.app";
-    console.log("origin", origin);
-    // revisa si la peticion viene una lista blanca
-    // const existe = urlPermitidas.some((dominio) => dominio === origin);
-    console.log("existe", existe);
-    console.log("urlPermitidas", urlPermitidas);
+    //   origin = "https://crm-react-001.netlify.app";
 
     if (!origin || urlPermitidas.indexOf(origin) !== -1) {
       callback(null, true);
@@ -45,8 +37,8 @@ const corsOptions = {
     }
   },
 };
-*/
-app.use(cors());
+
+app.use(cors(corsOptions));
 
 // Rutas de la App
 app.use("/", routes());
