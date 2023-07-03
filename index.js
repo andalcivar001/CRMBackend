@@ -54,3 +54,6 @@ app.listen(port, host, () => {
 });
 
 console.log("ya paso el listen");
+console.log(process.env.PORT);
+
+console.log(process.env.HOST);
