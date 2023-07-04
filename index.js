@@ -29,8 +29,8 @@ const urlPermitidas = [process.env.FRONTEND_URL];
 
 /// MODIFICAR ESTO PARA HACER CAMBIOS -- OJO !!!!!
 const corsOptions = {
-  //origin: process.env.FRONTEND_UR,
-  origin: "http://localhost:3000",
+  origin: process.env.FRONTEND_UR,
+  // origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));
