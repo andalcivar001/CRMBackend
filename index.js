@@ -33,6 +33,8 @@ const corsOptions = {
   // origin: "http://localhost:3000",
 };
 
+console.log("origin", corsOptions);
+
 app.use(cors(corsOptions));
 
 // Rutas de la App
