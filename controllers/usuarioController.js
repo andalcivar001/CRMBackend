@@ -17,7 +17,8 @@ exports.registrarUsuario = async (req, res) => {
 };
 
 exports.autenticarUsuario = async (req, res, next) => {
-  console.log("request", req.body);
+  console.log("request", req);
+  console.log("request.body", req.body);
   const { email, password } = req.body;
   const usuario = await Usuario.findOne({ email });
   if (!usuario) {
