@@ -47,7 +47,7 @@ exports.autenticarUsuario = async (req, res, next) => {
 };
 
 exports.autenticar = async (req, res, next) => {
-  console.log("req.param", req.params);
+  console.log("req.param ", req.params);
   const { email, password } = req.params;
   console.log(email, password);
   const usuario = await Usuario.findOne({ email });
