@@ -59,11 +59,11 @@ module.exports = function () {
 
   router.post("/usuarios/crear-cuenta", usuarioController.registrarUsuario);
   router.post("/usuarios/login", usuarioController.autenticarUsuario);
-  router.get(
+  router.post(
     "/usuarios/autenticar/:email/:password",
     usuarioController.autenticar
   );
-  router.get(
+  router.post(
     "/usuarios/crear-cuenta-url/:email/:nombre/:password",
     usuarioController.registrarUsuarioUrl
   );
