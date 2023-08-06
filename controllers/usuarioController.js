@@ -77,11 +77,11 @@ exports.autenticar = async (req, res, next) => {
 };
 
 exports.registrarUsuarioUrl = async (req, res) => {
-  console.log("path", req.path);
+  console.log("path", req.headers);
   console.log("req.param ", req.params);
-  //const { email, password, nombre } = req.params;
+  const { password } = req.params;
   const usuario = new Usuario(req.params);
-  usuario.password = await bcrypt.hash(req.body.password, 12);
+  usuario.password = await bcrypt.hash(password, 12);
   try {
     await usuario.save();
     res.json({ mensaje: "Usuario creado correctamente" });
