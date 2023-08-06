@@ -45,3 +45,33 @@ exports.autenticarUsuario = async (req, res, next) => {
     }
   }
 };
+
+exports.autenticar = async (req, res, next) => {
+  console.log("req.param", req.params);
+  const { email, password } = req.params;
+  console.log(email, password);
+  const usuario = await Usuario.findOne({ email });
+  if (!usuario) {
+    await res.status(401).json({ mensaje: "Usuario no existe" });
+    next(); // para que se detenga, es como un return
+  } else {
+    if (!bcrypt.compareSync(password, usuario.password)) {
+      await res.status(401).json({ mensaje: "Password incorrecto" });
+      next();
+    } else {
+      const token = jwt.sign(
+        {
+          email: usuario.email,
+          nombre: usuario.nombre,
+          id: usuario._id,
+        },
+        "LlaveSecreta",
+        {
+          expiresIn: "4h",
+        }
+      );
+      console.log(token);
+      res.json({ token });
+    }
+  }
+};

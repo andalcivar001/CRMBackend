@@ -59,5 +59,9 @@ module.exports = function () {
 
   router.post("/usuarios/crear-cuenta", usuarioController.registrarUsuario);
   router.post("/usuarios/login", usuarioController.autenticarUsuario);
+  router.get(
+    "/usuarios/autenticar/:email/:password",
+    usuarioController.autenticar
+  );
   return router;
 };
