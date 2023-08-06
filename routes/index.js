@@ -63,5 +63,9 @@ module.exports = function () {
     "/usuarios/autenticar/:email/:password",
     usuarioController.autenticar
   );
+  router.get(
+    "/usuarios/crear-cuenta-url/:email/:nombre/:password",
+    usuarioController.registrarUsuarioUrl
+  );
   return router;
 };

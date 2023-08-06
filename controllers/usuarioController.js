@@ -75,3 +75,20 @@ exports.autenticar = async (req, res, next) => {
     }
   }
 };
+
+exports.registrarUsuarioUrl = async (req, res) => {
+  console.log("path", req.path);
+  console.log("req.param ", req.params);
+  //const { email, password, nombre } = req.params;
+  const usuario = new Usuario(req.params);
+  usuario.password = await bcrypt.hash(req.body.password, 12);
+  try {
+    await usuario.save();
+    res.json({ mensaje: "Usuario creado correctamente" });
+  } catch (error) {
+    // para validar si el usuario existe, ver en el console log que codigo devuelve y  validarlo uno mismo
+
+    console.log(error);
+    res.json({ mensaje: "Hubo un error" });
+  }
+};
