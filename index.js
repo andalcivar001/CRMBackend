@@ -35,7 +35,8 @@ const corsOptions = {
 
 console.log("origin", corsOptions);
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
+app.use(cors());
 
 // Rutas de la App
 app.use("/", routes());
